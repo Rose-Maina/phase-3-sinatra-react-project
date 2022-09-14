@@ -12,12 +12,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/comments" do
-    comments = Comment.create(username: params[:username], comment: params[:comment])
-    comments.to_json
+    comments = Comment.create(
+      username: params[:username], 
+      comment: params[:comment]) 
   end
 
-   delete '/comments/:id' do
-   comments = Comment.find(params[:id])
-   comment.destroy
-  end
+  #  delete '/comments/:id' do
+  #  comments = Comment.find(params[:id])
+  #  comment.destroy
+  # end
 end
